@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <p>Creating a get request with xhr</p>
+    <button id="button">Press here!</button>
+    <div class="data"></div>
+    
+    <script>
+        document.getElementById("button").addEventListener('click', getinfo);
+        
+        function getinfo(){
+            var xhr = new XMLHttpRequest();
+            
+            
+            
+            xhr.onload = function(){
+                if( this.readystate == 4 && this.status == 200 ) {
+                    
+                    xhr.open('GET', 'name.txt', true);
+                    
+                    console.log(xhr.responseText);
+                }
+                
+            };
+            
+        }
+        
+        
+        
+    </script>
+    
+</body>
+</html>
